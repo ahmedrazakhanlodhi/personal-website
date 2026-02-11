@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ahmed Lodhi — Personal Website</title>
+    <meta name="description" content="Ahmed Lodhi — personal website, projects, and contact." />
+    <style>
+      :root{
+        --bg:#0b1020;
+        --card:#111a33;
+        --text:#eaf0ff;
+        --muted:#a9b5d6;
+        --accent:#6ea8fe;
+        --accent2:#7ee7c8;
+        --border:rgba(255,255,255,.12);
+        --shadow: 0 12px 30px rgba(0,0,0,.35);
+      }
+      *{box-sizing:border-box}
+      body{
+        margin:0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+        background:
+          radial-gradient(1000px 600px at 20% 10%, rgba(110,168,254,.25), transparent 60%),
+          radial-gradient(900px 650px at 90% 30%, rgba(126,231,200,.18), transparent 55%),
+          var(--bg);
+        color:var(--text);
+        line-height:1.6;
+      }
+      a{color:inherit}
+      .container{
+        width:min(980px, 92vw);
+        margin:0 auto;
+        padding:28px 0 60px;
+      }
+      header{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:16px;
+        padding:10px 0 26px;
+      }
+      .logo{
+        display:flex;
+        align-items:center;
+        gap:10px;
+        text-decoration:none;
+        font-weight:700;
+        letter-spacing:.2px;
+      }
+      .dot{
+        width:12px;height:12px;border-radius:999px;
+        background:linear-gradient(135deg, var(--accent), var(--accent2));
+        box-shadow:0 0 0 4px rgba(110,168,254,.12);
+      }
+      nav a{
+        text-decoration:none;
+        color:var(--muted);
+        margin-left:14px;
+        font-weight:600;
+        font-size:14px;
+      }
+      nav a:hover{color:var(--text)}
+      .btn{
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        gap:10px;
+        padding:10px 14px;
+        border-radius:12px;
+        border:1px solid var(--border);
+        background:rgba(255,255,255,.04);
+        text-decoration:none;
+        font-weight:700;
+      }
+      .btn:hover{border-color:rgba(255,255,255,.22)}
+      .btn.primary{
+        background:linear-gradient(135deg, rgba(110,168,254,.25), rgba(126,231,200,.18));
+        border-color:rgba(255,255,255,.18);
+      }
+      .hero{
+        display:grid;
+        grid-template-columns: 1.3fr .7fr;
+        gap:22px;
+        align-items:stretch;
+        margin-top:10px;
+      }
+      .card{
+        background:rgba(17,26,51,.75);
+        border:1px solid var(--border);
+        border-radius:18px;
+        padding:22px;
+        box-shadow:var(--shadow);
+        backdrop-filter: blur(10px);
+      }
+      h1{
+        font-size:42px;
+        line-height:1.1;
+        margin:0 0 10px;
+      }
+      .subtitle{color:var(--muted); margin:0 0 16px}
+      .tags{
+        display:flex; flex-wrap:wrap; gap:8px;
+        margin:16px 0 18px;
+      }
+      .tag{
+        font-size:12px;
+        padding:6px 10px;
+        border:1px solid var(--border);
+        border-radius:999px;
+        color:var(--muted);
+        background:rgba(255,255,255,.03);
+      }
+      .cta{
+        display:flex;
+        flex-wrap:wrap;
+        gap:10px;
+        margin-top:14px;
+      }
+      .profile{
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+        gap:16px;
+      }
+      .avatar{
+        width:62px;height:62px;border-radius:18px;
+        background:linear-gradient(135deg, rgba(110,168,254,.95), rgba(126,231,200,.9));
+        display:grid; place-items:center;
+        font-weight:900;
+        color:#061022;
+        letter-spacing:.5px;
+      }
+      .small{color:var(--muted); font-size:14px; margin:0}
+      section{margin-top:22px}
+      h2{margin:0 0 10px; font-size:18px}
+      .grid{
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap:14px;
+      }
+      .project h3{margin:0 0 6px; font-size:16px}
+      .project p{margin:0; color:var(--muted); font-size:14px}
+      .project a{
+        display:inline-block;
+        margin-top:10px;
+        color:var(--text);
+        text-decoration:none;
+        font-weight:700;
+        font-size:14px;
+      }
+      .project a:hover{text-decoration:underline}
+      footer{
+        margin-top:26px;
+        color:var(--muted);
+        font-size:13px;
+        display:flex;
+        justify-content:space-between;
+        gap:10px;
+        flex-wrap:wrap;
+      }
+      .links a{color:var(--muted); margin-right:10px; text-decoration:none}
+      .links a:hover{color:var(--text)}
+      @media (max-width: 860px){
+        .hero{grid-template-columns: 1fr}
+        .grid{grid-template-columns: 1fr}
+        h1{font-size:34px}
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <a class="logo" href="#top">
+          <span class="dot"></span>
+          <span>Ahmed Lodhi</span>
+        </a>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main id="top" class="hero">
+        <section class="card">
+          <h1>Hi, I’m Ahmed Lodhi.</h1>
+          <p class="subtitle">
+            I build practical, data-driven work and write clearly about what I learn.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Policy + Data</span>
+            <span class="tag">Python / R</span>
+            <span class="tag">Research</span>
+            <span class="tag">Public Interest</span>
+          </div>
+
+          <div class="cta">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn" href="#contact">Contact Me</a>
+            <!-- Replace # with your links -->
+            <a class="btn" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="btn" href="#" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </section>
+
+        <aside class="card profile">
+          <div style="display:flex; gap:14px; align-items:center;">
+            <div class="avatar">AL</div>
+            <div>
+              <h2 style="margin:0;">Quick Info</h2>
+              <p class="small" style="margin:4px 0 0;">Chicago • Available for internships & collaborations</p>
+            </div>
+          </div>
+
+          <div>
+            <h2 style="margin-bottom:6px;">Focus</h2>
+            <p class="small">
+              Data analysis, policy research, and building tools that make complex systems easier to understand.
+            </p>
+          </div>
+
+          <div>
+            <h2 style="margin-bottom:6px;">Now</h2>
+            <p class="small">
+              Working on small projects, writing, and improving my portfolio.
+            </p>
+          </div>
+        </aside>
+      </main>
+
+      <section id="about" class="card">
+        <h2>About</h2>
+        <p class="small">
+          I’m Ahmed Lodhi. This is my personal corner on the internet — a simple place to share my work,
+          interests, and ways to connect. I like building clean dashboards, analyzing data, and turning
+          insights into practical recommendations.
+        </p>
+      </section>
+
+      <section id="projects" class="card">
+        <h2>Projects</h2>
+        <div class="grid">
+          <div class="card project" style="padding:16px;">
+            <h3>Project One</h3>
+            <p>Short description of what you built and why it matters.</p>
+            <a href="#" target="_blank" rel="noreferrer">View →</a>
+          </div>
+          <div class="card project" style="padding:16px;">
+            <h3>Project Two</h3>
+            <p>Short description of your analysis, research, or tool.</p>
+            <a href="#" target="_blank" rel="noreferrer">View →</a>
+          </div>
+          <div class="card project" style="padding:16px;">
+            <h3>Project Three</h3>
+            <p>Short description with outcomes or what you learned.</p>
+            <a href="#" target="_blank" rel="noreferrer">View →</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="card">
+        <h2>Contact</h2>
+        <p class="small">
+          Want to reach out? Email me at
+          <a href="mailto:ahmed@example.com">ahmed@example.com</a>
+          (replace this with your real email).
+        </p>
+        <p class="small" style="margin-top:10px;">
+          Or connect via the links in the header / buttons above.
+        </p>
+      </section>
+
+      <footer>
+        <div>© <span id="year"></span> Ahmed Lodhi</div>
+        <div class="links">
+          <!-- Replace with your real links -->
+          <a href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="#" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="#top">Back to top</a>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // auto year
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
