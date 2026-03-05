@@ -1,3 +1,9 @@
+/*Credits:
+- Learnt from https://www.youtube.com/watch?v=ZPMtug9qExk
+- Notes from https://developer.mozilla.org/en-US/docs/Web/CSS/max-width
+*/
+
+
 body {
   font-family: Arial, sans-serif;
   max-width: 800px;
